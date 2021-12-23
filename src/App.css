@@ -18,3 +18,23 @@ input.form-control, input.form-control:focus {
   font-size: .9rem;
 }
 
+table{
+ border-collapse: collapse;
+ width: 100%;
+}
+th,td {
+  border: 1px solid #ffffff;
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+  gap: 10px;
+}
+
+.search{
+  margin-left:80% ;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
