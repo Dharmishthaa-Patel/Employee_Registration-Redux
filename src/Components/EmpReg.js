@@ -38,7 +38,7 @@ const EmpReg = () => {
     // })
 
     const dispatch = useDispatch(); 
-
+    
     const formik = useFormik({
         initialValues: {
             ename:'',
@@ -71,7 +71,6 @@ const EmpReg = () => {
             dispatch(editData(id))
         }
     }, [])
-    console.log("useEffect",useEffect)
 
     // work like Do-While loop
     useEffect(() => {
@@ -80,7 +79,7 @@ const EmpReg = () => {
             //console.log("newformikstate",formikState)     
         }
     }, [formikState], // init data blank 
-    console.log("formikstate",formikState) 
+   // console.log("formikstate",formikState) 
     )
 
     return (
