@@ -6,7 +6,7 @@ import { TextField } from '@material-ui/core';
 import { addData, editData, updateData } from '../Action/empAction';
 import { NavLink } from 'react-router-dom';
 import queryString from 'query-string'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 
 const EmpReg = () => {
 
@@ -17,25 +17,25 @@ const EmpReg = () => {
     const history = useHistory();
     
 
-    // const validation = Yup.object().shape({
-    //     ename: Yup.string()
-    //     .required('Employee Name is Required'),
+    const validation = Yup.object().shape({
+        ename: Yup.string()
+        .required('Employee Name is Required'),
 
-    //     profession: Yup.string()
-    //     .required('profession is Required'),
+        profession: Yup.string()
+        .required('profession is Required'),
 
-    //     email: Yup.string()
-    //     .required('E-Mail is Required'),
+        email: Yup.string()
+        .required('E-Mail is Required'),
 
-    //     pwd: Yup.string()
-    //     .min(6,'Password Must be at least 6 Character'),
+        pwd: Yup.string()
+        .min(6,'Password Must be at least 6 Character'),
 
-    //     phone: Yup.string()
-    //     .required('Contact is Required'),
+        phone: Yup.string()
+        .required('Contact is Required'),
 
-    //     salary: Yup.string()
-    //     .required('salary is Required'),
-    // })
+        salary: Yup.string()
+        .required('salary is Required'),
+    })
 
     const dispatch = useDispatch(); 
     
@@ -54,8 +54,6 @@ const EmpReg = () => {
                 console.log("update",values)
                 dispatch(updateData(id,values))
                 history.push('/deshboard')
-               // console.log("history",history);
-
             } else {
                 dispatch(addData(values))
                 formik.handleReset()
@@ -72,7 +70,6 @@ const EmpReg = () => {
         }
     }, [])
 
-    // work like Do-While loop
     useEffect(() => {
         if (id && formikState) {
             formik.setValues(formikState)  //show new value in formikState
@@ -148,4 +145,4 @@ const EmpReg = () => {
     )
 }
 
-export default EmpReg;
+export default EmpReg
